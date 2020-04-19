@@ -1,0 +1,124 @@
+<%- include ("partials/header") %>
+
+<div class="container" style="margin-top: 100px;">
+    <h1 style = "text-align: center; margin-bottom: 40px;"><u>EDIT DETAILS</u></h1>
+    <div class="row">
+        <div class="container">
+            <form action="/hotels/<%= hotel._id%>?_method=PUT" method="POST">
+                <!-- HOTEL NAME -->
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" value="<%= hotel.name %>" name="hotel[name]" required>
+                </div>
+                <!-- HOTEL ADDRESS -->
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" value="<%= hotel.address %>" name="hotel[address]" required>
+                </div>
+                <!-- PHONE NUMBER -->
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input id="field" type="text" class="form-control" value="<%= hotel.phone %>" name="hotel[phone]" required>
+                </div>
+                <!-- HOTEL LOCATION -->
+                <div class="form-group">
+                    <label>Location</label>
+                    <input id="field" type="text" class="form-control" value="<%= hotel.location %>" name="hotel[location]" required>
+                </div>
+                <!-- HOTEL IMAGE -->
+                <div class="form-group">
+                    <label>Image</label>
+                    <input type="text" class="form-control" value="<%= hotel.image %>" name="hotel[image]" required>
+                </div>
+                <!-- HOTEL DESCRIPTION -->
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" name="hotel[description]" rows="5" required><%= hotel.description %></textarea>
+                </div>
+                <!-- ROOM TYPE -->
+                <div class="form-group">
+                    <label>Type of Room</label>
+                    <select id="field" class="form-control" name="hotel[roomtype]"  required>
+                        <option>Single</option>
+                        <option>Double</option>
+                        <option>Quad</option>
+                        <option>Suite</option>
+                        <option>Dorm</option>
+                    </select>
+                </div>
+                <!-- ROOM PRICE -->
+                <div class="form-group">
+                    <label>Room Price(/night)</label>
+                    <input id="field" type="text" class="form-control" value="<%= hotel.price %>" name="hotel[price]" required>
+                </div>
+                <!-- ROOM DESCRIPTION -->
+                <div class="form-group">
+                    <label>Room Description</label>
+                    <input type="text" class="form-control" value="<%= hotel.roomdesc %>" name="hotel[roomdesc]" required>
+                </div>
+                <!-- HOTEL RATING -->
+                <div class="form-group">
+                    <label>Hotel Rating</label>
+                    <input id="field" type="text" class="form-control" value="<%= hotel.rating %>" name="hotel[rating]" required>
+                </div>
+                <!-- CHECKOUT TIME -->
+                <div class="form-group">
+                    <label>Checkout Time</label>
+                    <select id="field" class="form-control" name="hotel[checkout]" required>
+                        <% var options = ["10:00 AM", "11:00 AM", "12:00 PM"]; %>
+                        <% for ( var i = 0; i < options.length; i++ ){ %>
+                        <% var isSelected = ( hotel.checkout == options[i] ) ? "selected" : ""; %>
+                        <option value="<%=options[i]%>" <%= isSelected %>>
+                            <%= options[i] %>
+                        </option>
+                        <% } %>
+                    </select>
+                </div>
+                <!-- ACCESSIBILITY -->
+                <div class="form-group">
+                    <label>Accessibility</label>
+                    <input  type="text" class="form-control" value="<%= hotel.accessibility %>" name="hotel[accessibility]" required>
+                </div>
+                <!-- CANCELLATION POLICY -->
+                <div class="form-group">
+                    <label>Cancellation Policy</label>
+                    <input  type="text" class="form-control" value="<%= hotel.cancellation %>" name="hotel[cancellation]" required>
+                </div>
+                <!-- HOUSE RULES -->
+                <div class="form-group">
+                    <label for="selectVal">House Rules (Hold Ctrl/Cmd to select Multiple)</label>
+                    <select multiple class="form-control" id="selectVal" name="hotel[houserules]" >
+                      <option>Not suitable for Children and Infants</option>
+                      <option>No Pets</option>
+                      <option>No Parties or Events</option>
+                      <option>Smoking is Allowed</option>
+                      <option>Smoking is Not Allowed</option>
+                    </select>
+                  </div>
+                <!-- AMENITIES -->
+                <div class="form-group">
+                    <label for="selectVal">Amenities (Hold Ctrl/Cmd to select Multiple)</label>
+                    <select multiple class="form-control" id="selectVal" name="hotel[amenities]">
+                      <option>Wifi</option>
+                      <option>Hair Dryer</option>
+                      <option>Laundry</option>
+                      <option>Gym</option>
+                      <option>Lift</option>
+                      <option>Smoke Alarm</option>
+                      <option>Air Conditioning(Cooling/Heating)</option>
+                      <option>Refrigerator</option>
+                      <option>Laptop Friendly WorkSpace</option>
+                    </select>
+                  </div>
+                <!-- SUBMIT BUTTON -->
+                <div class="form-group" style="text-align: center;">
+                    <button class="btn btn-success" style="font-size: larger;">Submit</button>
+                </div>
+            </form>
+            <a href="/hotels/<%= hotel._id %>" style="font-size: 1.2em;" class="pb-5">Go Back</a>
+        </div>
+    </div>
+</div>
+
+
+<%- include ("partials/footer") %>

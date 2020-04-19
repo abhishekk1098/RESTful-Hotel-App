@@ -1,0 +1,120 @@
+<%- include ("partials/header") %>
+
+<div class="container" style="margin-top: 100px;">
+    <h1 style = "text-align: center; margin-bottom: 40px;"><u>ADD HOTEL DETAILS</u></h1>
+    <div class="row">
+        <div class="container">
+            <form id="new" action="/hotels" method="POST" autocomplete="off">
+                <!-- HOTEL NAME -->
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Name of Hotel" name="hotel[name]" required>
+                </div>
+                <!-- HOTEL ADDRESS -->
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" placeholder="Address of Hotel" name="hotel[address]" required>
+                </div>
+                <!-- PHONE NUMBER -->
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input id="field" type="text" class="form-control" placeholder="Contact Number" name="hotel[phone]" required>
+                </div>
+                <!-- HOTEL LOCATION -->
+                <div class="form-group">
+                    <label>Location</label>
+                    <input id="field" type="text" class="form-control" placeholder="Location of Hotel" name="hotel[location]" required>
+                </div>
+                <!-- HOTEL IMAGE -->
+                <div class="form-group">
+                    <label>Image</label>
+                    <input type="text" class="form-control" placeholder="Image URL" name="hotel[image]" required>
+                </div>
+                <!-- HOTEL DESCRIPTION -->
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" placeholder="About The Hotel" name="hotel[description]" rows="5" required></textarea>
+                </div>
+                <!-- ROOM TYPE -->
+                <div class="form-group">
+                    <label>Type of Room</label>
+                    <select id="field" class="form-control" name="hotel[roomtype]" required>
+                        <option>Single</option>
+                        <option>Double</option>
+                        <option>Quad</option>
+                        <option>Suite</option>
+                        <option>Dorm</option>
+                    </select>
+                </div>
+                <!-- ROOM PRICE -->
+                <div class="form-group">
+                    <label>Room Price(/night)</label>
+                    <input id="field" type="text" class="form-control" placeholder="Price per Night" name="hotel[price]" required>
+                </div>
+                <!-- ROOM DESCRIPTION -->
+                <div class="form-group">
+                    <label>Room Description</label>
+                    <input type="text" class="form-control" placeholder="About The Room" name="hotel[roomdesc]" required>
+                </div>
+                <!-- HOTEL RATING -->
+                <div class="form-group">
+                    <label>Hotel Rating</label>
+                    <input id="field" type="text" class="form-control" placeholder="Out of 5" name="hotel[rating]" required>
+                </div>
+                <!-- CHECKOUT TIME -->
+                <div class="form-group">
+                    <label>Checkout Time</label>
+                    <select id="field" class="form-control" name="hotel[checkout]" required>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                    </select>
+                </div>
+                <!-- ACCESSIBILITY -->
+                <div class="form-group">
+                    <label>Accessibility</label>
+                    <input  type="text" class="form-control" placeholder="Content" name="hotel[accessibility]" required>
+                </div>
+                <!-- CANCELLATION POLICY -->
+                <div class="form-group">
+                    <label>Cancellation Policy</label>
+                    <input  type="text" class="form-control" placeholder="Content" name="hotel[cancellation]" required>
+                </div>
+                <!-- HOUSE RULES -->
+                <div class="form-group">
+                    <label for="selectVal">House Rules (Hold Ctrl/Cmd to select Multiple)</label>
+                    <select multiple class="form-control" id="selectVal" name="hotel[houserules]">
+                      <option>Not suitable for Children and Infants</option>
+                      <option>No Pets</option>
+                      <option>No Parties or Events</option>
+                      <option>Smoking is Allowed</option>
+                      <option>Smoking is Not Allowed</option>
+                    </select>
+                  </div>
+                <!-- AMENITIES -->
+                <div class="form-group">
+                    <label for="selectVal">Amenities (Hold Ctrl/Cmd to select Multiple)</label>
+                    <select multiple class="form-control" id="selectVal" name="hotel[amenities]">
+                      <option>Wifi</option>
+                      <option>Hair Dryer</option>
+                      <option>Laundry</option>
+                      <option>Lift</option>
+                      <option>Gym</option>
+                      <option>Smoke Alarm</option>
+                      <option>Air Conditioning(Cooling/Heating)</option>
+                      <option>Refrigerator</option>
+                      <option>Laptop Friendly WorkSpace</option>
+                    </select>
+                  </div>
+                <!-- SUBMIT BUTTON -->
+                <div class="form-group" style="text-align: center;">
+                    <button class="btn btn-success" style="font-size: larger;">Submit</button>
+                </div>
+            </form>
+            <a href="/hotels" style="font-size: 1.2em;" class="pb-5">Go Back</a>
+        </div>
+    </div>
+</div>
+
+
+<%- include ("partials/footer") %>

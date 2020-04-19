@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+
+<div class="container-fluid" style="margin-top: 100px;">
+    <h1 class="display-4"><u>HOTEL$ FOR YOU</u></h1>
+    <div class="row mb-4">
+        <% hotels.forEach(function(hotel){ %>
+            <div class="col-md-4 col-sm-6">
+                <div class="card" style="width: 25rem;">
+                    <img class="card-img-top" src="<%= hotel.image %>" alt="Card image cap">
+                    <div class="card-body pb-0">
+                        <h3 class="card-title mb-0"><%= hotel.name %>,</h3>
+                        <h5><%= hotel.location %></h5>
+                        <p class="card-text mt-4">
+                            <%- hotel.description.substring(0, hotel.description.indexOf(".")+1) %>
+                        </p>
+                        <p>
+                            Rating : <strong><%= hotel.rating %>/5</strong>
+                            <span class="float-right">Rs.<strong><%= hotel.price %></strong> /night</span>
+                        </p>
+                        <img src="/Images/correct.png">
+                        <p class="float-right" >
+                            <a href="/hotels/<%= hotel._id %>" class="btn btn-outline-success px-4 py-1">Visit</a>
+                            <i class="far fa-heart btn btn-outline-danger py-1"></i>
+                        </p>
+                    </div>
+                </div>    
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

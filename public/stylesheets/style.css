@@ -61,10 +61,7 @@ li i{
     object-fit: cover;
 }
 
-
 /* STYLING OF NEW FORM PAGE*/
-
-
 form label{
     font-weight: bold;
 }
@@ -132,3 +129,4 @@ strong{
     display: inline;
     margin-left: 8px;
 }
+
